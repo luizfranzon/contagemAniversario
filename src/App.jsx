@@ -39,6 +39,7 @@ export function App() {
 
     useEffect(() => {
         setTimer(calcTimer())
+        throwConfetti()
     })
 
     useEffect(() => {
