@@ -19,6 +19,7 @@ body {
 
     font-size: 2rem;
     gap: 1.25rem;
+
 }
 
 body div {
@@ -32,6 +33,7 @@ body div {
 
 h1 {
     color: white;
+    user-select:none;
 }
 
 p {

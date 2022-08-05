@@ -3,6 +3,9 @@ import JSConfetti from 'js-confetti'
 const jsConfetti = new JSConfetti()
 
 function throwConfetti() {
+    jsConfetti.addConfetti({
+        emojis: ['🥳', '🎂', '🎉', '🎈', '🎊'],
+    })
     jsConfetti.addConfetti()
 }
 
@@ -12,7 +15,7 @@ export function App() {
 
     const [timer, setTimer] = useState()
 
-    const destTime = new Date("aug 5, 2022 00:00:00").getTime()
+    const destTime = new Date("aug 17, 2022 00:00:00").getTime()
 
     function calcDifference() {
         var now = new Date().getTime();
@@ -24,14 +27,15 @@ export function App() {
     function calcTimer() {
         var difference = calcDifference();
 
+        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
         var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         if (difference <= 0) {
-            return "CHEGO!!!"
+            return "feliz cumpleaños"
         } else {
-            return `${hours} hora(s) ${minutes} minuto(s) e ${seconds} segundo(s)`
+            return `${days} dia(s) ${hours} hora(s) ${minutes} minuto(s) e ${seconds} segundo(s)`
         }
     }
 
@@ -49,7 +53,7 @@ export function App() {
 
     return (
         <div>
-            <p> 🎂🥳🎉 19 años yeeeeee felicidade uhuuu! 🎂🥳🎉 </p>
+            <p> 🥳🎂🥳 18 anos do danolo eeeeeeee 🎉🎂🎉 </p>
             <h1>{timer}</h1>
         </div>
     )
