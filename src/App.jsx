@@ -6,6 +6,8 @@ function throwConfetti() {
     jsConfetti.addConfetti()
 }
 
+throwConfetti()
+
 export function App() {
 
     const [timer, setTimer] = useState()
@@ -39,7 +41,6 @@ export function App() {
 
     useEffect(() => {
         setTimer(calcTimer())
-        throwConfetti()
     })
 
     useEffect(() => {
